@@ -17,6 +17,10 @@
             <p>@item.Description</p>
             <p>
                 Brand: <strong>@item.CatalogBrand?.Brand</strong>
+                    @if (item.CatalogBrand?.VoucherPercent > 0)
+                    {
+                        <span class="voucher">🎉 Gutschein: @item.CatalogBrand.VoucherPercent% Rabatt auf Solstix!</span>
+                    }
             </p>
             <form class="add-to-cart" method="post" @formname="add-to-cart" @onsubmit="@AddToCartAsync" data-enhance="@isLoggedIn">
                 <AntiforgeryToken />

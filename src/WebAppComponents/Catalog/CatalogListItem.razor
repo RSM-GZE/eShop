@@ -9,6 +9,11 @@
         <span class='catalog-product-content'>
             <span class='name'>@Item.Name</span>
             <span class='price'>$@Item.Price.ToString("0.00")</span>
+            <span class='description'>@Item.Description</span>
+            @if (Item.CatalogBrand?.VoucherPercent > 0)
+            {
+                <span class="voucher">🎉 Gutschein: @Item.CatalogBrand.VoucherPercent% Rabatt auf Solstix!</span>
+            }
         </span>
     </a>
 </div>

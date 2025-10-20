@@ -644,6 +644,10 @@
           "brand": {
             "type": "string",
             "nullable": true
+          },
+          "voucherPercent": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
