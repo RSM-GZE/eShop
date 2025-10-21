@@ -10,6 +10,7 @@ public class BasketItem : IValidatableObject
     public int Quantity { get; set; }
     public string PictureUrl { get; set; }
     public decimal EcommercePrice { get; set; }
+    public bool Unique { get; set; }
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
@@ -20,10 +21,15 @@ public class BasketItem : IValidatableObject
             results.Add(new ValidationResult("Invalid number of units", new[] { "Quantity" }));
         }
 
-        // Quantity must not be greater than 9999
         if (Quantity > 9999)
         {
             results.Add(new ValidationResult("Invalid number of units", new[] { "Quantity" }));
+        }
+
+        // Unique-Produkte dürfen nur einmal im Warenkorb liegen
+        if (Unique && Quantity > 1)
+        {
+            results.Add(new ValidationResult("Unique products can only be added once to the basket", new[] { "Quantity" }));
         }
 
         return results;
