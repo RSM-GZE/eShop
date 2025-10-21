@@ -6,7 +6,7 @@ Dieses Dokument enthält die fundamentalen Richtlinien für die Softwareentwickl
 
 ## 1. Projekt-Kontext
 
-- **Projekt:** `[Projektname hier einfügen, z.B. "Kundenportal-Backend"]`
+- **Projekt:** `ESHOP`
 - **Zweck:** Stellt Daten und Geschäftslogik über eine API (z.B. REST oder GraphQL) bereit. Dient als Backend für `[Frontend-Anwendung, andere Services, etc.]`.
 - **Technologie-Stack:** .NET 8, ASP.NET Core für die Web-API, Entity Framework Core (EF Core) für die Persistenz, `[Datenbank, z.B. PostgreSQL, SQL Server]`, NuGet für das Paketmanagement.
 - **Architektur:** Strikte **3-Schicht-Architektur** (Controller, Service, Repository/DbContext). Die gesamte Geschäftslogik befindet sich **ausschließlich** in der Service-Schicht.
